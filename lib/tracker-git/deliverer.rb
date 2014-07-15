@@ -12,6 +12,7 @@ module Tracker
 
       project.finished.each do |story|
         if git.contains?(story.id, options)
+          puts story.url
           project.deliver(story)
           project.add_label(story, label) if label
         end
